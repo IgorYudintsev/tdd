@@ -1,3 +1,5 @@
+//Типизация+тесты
+
 import {cityType} from "./02_02";
 
 let city: cityType
@@ -33,11 +35,32 @@ beforeEach(() => {
                 }
             }
         }],
-        governmentBuildings: [],
+        governmentBuildings: [
+            {
+                type:'HOSPITAL',
+                budget:200000,
+                staffCount:200,
+                address:{
+                    street:{
+                        title:'Central Str'
+                    }
+                }
+            },
+            {
+                type:'FireSTATION',
+                budget:500000,
+                staffCount:100,
+                address:{
+                    street:{
+                        title:'South Str'
+                    }
+                }
+            },
+        ],
         citizenNumber: 100000
     }
 })
-test('test city should contains 3 houses', () => {
+test.skip('test city should contains 3 houses', () => {
     expect(city.houses.length).toBe(3)
 
     expect(city.houses[0].buildedAt).toBe(2012);
